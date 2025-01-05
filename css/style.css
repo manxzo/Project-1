@@ -1,0 +1,511 @@
+/***************************************************
+  0) GLOBAL RESET / BASE
+****************************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* Let the user scroll if the design is bigger than screen. */
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: clamp(12px, 1vw, 18px);
+  line-height: 1.2;
+  background: #222; /* optional background */
+  color: #fff; /* default text color */
+}
+
+/***************************************************
+  1) .body => .main => 3 columns
+****************************************************/
+.body {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh; /* columns fill vertical space */
+}
+
+/* .gameinfo => 20%, .gameplay => 70%, .menu => 10% */
+.gameinfo {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  /* 6 child sections => ratio 1:2:1:2:2:1 via nth-child below */
+  min-width: 240px; /* so it doesn’t shrink too much */
+}
+.gameplay {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  /* 4 child sections => ratio 1:2:2:2 via nth-child below */
+  min-width: 480px;
+}
+.menu {
+  width: 10%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  gap: 50px;
+  align-items: stretch;
+  background: #000000;
+  min-width: 120px;
+  padding: 8px;
+}
+.invisible {
+  content-visibility: hidden !important;
+  flex: 0 !important;
+  visibility: hidden !important;
+}
+/***************************************************
+  2) .gameinfo => 6 sections => ratio 1:2:1:2:2:1
+****************************************************/
+.gameinfo-section {
+  background-color: #555;
+  border: 2px solid #000;
+  border-radius: 8px;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+}
+.gameinfo-section > * {
+  min-height: 100%;
+}
+/* Nth-child approach: 1:2:1:2:2:1 => total 9 "units" */
+.gameinfo-section:nth-child(1) {
+  flex: 1 1 0;
+}
+.gameinfo-section:nth-child(2) {
+  flex: 2 1 0;
+}
+.gameinfo-section:nth-child(3) {
+  flex: 1 1 0;
+}
+.gameinfo-section:nth-child(4) {
+  flex: 2 1 0;
+}
+.gameinfo-section:nth-child(5) {
+  flex: 2 1 0;
+}
+.gameinfo-section:nth-child(6) {
+  flex: 1 1 0;
+}
+
+/***************************************************
+  3) .gameplay => 4 sections => ratio 1:2:2:2
+****************************************************/
+.gameplay-section {
+  background-color: #555;
+  border: 2px solid #000;
+  border-radius: 8px;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+}
+.gameplay-section > * {
+  min-height: 100%;
+}
+/* 1:2:2:2 => total 7 "units" */
+.gameplay-section:nth-child(1) {
+  flex: 1 1 0;
+} /* message */
+.gameplay-section:nth-child(2) {
+  flex: 2 1 0;
+} /* jokers */
+.gameplay-section:nth-child(3) {
+  flex: 2 1 0;
+} /* hand */
+.gameplay-section:nth-child(4) {
+  flex: 2 1 0;
+} /* table */
+
+/***************************************************
+  4) IMAGES (Logo, Boss, Coin)
+****************************************************/
+.logo-container,
+.bossimg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.logo-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #222;
+}
+.logo,
+.image {
+  object-fit: fill;
+  border-radius: 6px;
+  max-height: 100%;
+  min-width: 80%;
+  border-radius: 16px;
+}
+.coin {
+  width: auto;
+  height: 2em; /* scale coin text to ~2 lines of text high */
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+/***************************************************
+  5) Title vs. Info Boxes
+****************************************************/
+.title-box {
+  background: #000;
+  border: 2px solid red;
+  border-radius: 5px;
+  margin: 0px;
+  margin-bottom: 2px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  flex: 0 0 auto;
+  align-self: stretch;
+}
+.info-box {
+  background: #333;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+  color: #fff;
+  flex: 1 1 auto;
+  align-self: stretch;
+  align-content: center;
+}
+
+/***************************************************
+  6) Round Clear / Player Points
+****************************************************/
+.full-points-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+.points-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.coin-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #333;
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 5px;
+  gap: 5px;
+}
+.coin-info-box {
+  color: #fff;
+  margin: 0;
+}
+
+/***************************************************
+  7) Handtype
+****************************************************/
+.handtype-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+
+/***************************************************
+  8) Calculator
+****************************************************/
+.full-calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+.point-multi-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.point-multi-container > * {
+  flex: 2;
+}
+.x-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.x-text {
+  color: #fff;
+  margin: 0;
+  font-size: 3em;
+}
+.total-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+/***************************************************
+  9) Boss
+****************************************************/
+.full-boss-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1 1 auto;
+  gap: 5px;
+  padding: 5px;
+}
+.bossinfo-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-around;
+}
+.info-box.boss {
+  font-size: 1.2em;
+}
+/***************************************************
+  10) Round/Ante
+****************************************************/
+.full-roundinfo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 5px;
+  padding: 5px;
+}
+.full-roundinfo-container > * {
+  flex: 1 1 auto;
+}
+.roundinfo-container {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+/***************************************************
+  11) Message Box
+****************************************************/
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+
+/***************************************************
+  12) Jokers => row => ratio 2:3
+****************************************************/
+.full-joker-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5px;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+.joker-title-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.joker-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  gap: 5px;
+}
+.joker-cards {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background: #666;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  overflow: hidden;
+}
+.jokers-in-play {
+  flex: 2;
+}
+.jokers-available {
+  flex: 3;
+}
+.jokers-details {
+  flex: 3;
+}
+/* Joker cards => same size as playing cards if you want. */
+.jokerinfo-container {
+  min-width: 6em;
+  min-height: 10em;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em;
+}
+.jokerinfo-container.details {
+  background-color: gainsboro;
+  align-self: stretch;
+  flex: 1;
+}
+/***************************************************
+  13) Hand => 20% for buttons, 80% for 5 cards + deck
+****************************************************/
+.full-hand-buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 5px;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+.buttons-container {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: stretch;
+}
+.buttons-container > * {
+  flex: 1;
+  align-content: center;
+}
+.cards-container.hand-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.deck-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+/***************************************************
+  14) Playing Cards
+****************************************************/
+/* Use em-based or fixed. Let’s do em-based for scaling. */
+.single-card-container {
+  min-width: 6em;
+  min-height: 10em;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em;
+  overflow: hidden;
+}
+.card-value-top {
+  align-self: flex-start;
+  font-size: 2em;
+  color: #000;
+  margin: 0;
+}
+.card-suit {
+  font-size: 2.8em;
+  color: #000;
+  margin: 0;
+}
+.card-value-bottom {
+  align-self: flex-end;
+  font-size: 2em;
+  color: #000;
+  margin: 0;
+}
+
+.red-card{
+  color: red;
+}
+.deck {
+  background: red;
+  border: 2px solid #000;
+  border-radius: 5px;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+#card-count{
+  font-size: 4em;
+  margin: 0;
+}
+/***************************************************
+  15) Table => row of many cards
+****************************************************/
+.cards-container.table-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+/***************************************************
+  16) Menu Buttons
+****************************************************/
+.menu-button,
+.in-game-button {
+  background: #777;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding: 6px;
+  width: 100%;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+#play-button {
+  background: #0c5;
+  font-size: 3em;
+  text-decoration: none;
+}
+#discard-button {
+  background: #d11;
+  font-size: 2.5em;
+  text-decoration: none;
+}

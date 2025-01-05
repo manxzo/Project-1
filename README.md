@@ -20,7 +20,7 @@ Each set of 3 rounds is called an Ante. Each round is described below:
 
 - This round has the highest point requirement in the Ante and will have some conditions for the player to fulfil such as spades having lower points or being only allowed to play one type of hand.
 
-**Note**:In the original game there are 8 Antes but for the sake of simplicity and the vastly lesser amount of Jokers, there will only be 3 Antes and a Bonus Boss Round.
+**Note**:In the original game there are 8 Antes but for the sake of simplicity and the vastly lesser amount of Jokers, there will only be 3 Antes and a Bonus Boss Ante.
 
 ### Jokers
 
@@ -30,9 +30,9 @@ There are over 100 Jokers in the original game but for simplicity, I will includ
 
 1. Classic Joker - Adds a x4 multiplier.
 2. Red Rage Joker - If the winning hand contains atleast 3 red cards the add 20 points per red card.
-3. Half Joker - If your winning hand has less than 3 cards add x10 to the multiplier.
-4. Gigachad Joker - If your played hand is a straight, all cards in the winning hand have the points of the highest card.
-5. Toilet Joker - If your played hand is a Flush, add x6 to the multiplier.
+3. Half Joker - If your winning hand has 3 or less cards add x15 to the multiplier.
+4. Gigachad Joker - If your played hand is a Straight or Full House, for each card in the winning hand add the value of the highest card.
+5. Toilet Joker - If your played hand is a Flush or Straight Flush or Royal Flush, add x10 to the multiplier.
 6. Knightly Joker - If your winning hand contains face cards(Including Ace), all winning cards are worth 21 points.
 7. Ghastly Joker - If you are in a Boss Round, `x1.5` your final multiplier value.
 8. Dogg Joker - All cards take the value of the 'highest' card in your entire hand. (Not just the played hand)
@@ -41,12 +41,10 @@ There are over 100 Jokers in the original game but for simplicity, I will includ
 
 **Special Jokers**
 
-These two jokers can only be found if you fulfil special conditions.
+These two jokers can only be found if you complete Ante 3.
 
 1. Negative Joker - All card played count towards the points calculation of the winning hand. Adds x2 multiplier for each discard and hand left in this round.
-   > **Unlock Condition**: Clear Ante 3 Boss.
 2. God Joker - `x5` your final multiplier value. Add 50 points for each card in winning hand.
-   > **Unlock Condition**: Clear Ante 1 under 2 minutes.
 
 ## Bosses
 
@@ -63,7 +61,7 @@ In the original game there are over 80 different bosses but again,for simplicity
 **Special Bosses**
 
 1. No Money for a Suit - Suits will not be revealed.
-2. Insider Trading - Each hand that you play reduces your winning points by 10%.
+2. Insider Trading - For each hand you play, your total points are reduced by 10%.
 
 ## Hands and Multipliers
 

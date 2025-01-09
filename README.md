@@ -126,15 +126,18 @@ enter Bonus Round
 Retry Button + Leaderboard Name
 ```
 ---------------------------------------------------------------------------------------------------
-##Comments and references
+## Comments and references
 So for my code , I got the logic working for the most part, except some parts where I misplaces the code positioning an usually fixed it with the console.
 A few things I would like to improve on is organising my code better and making my code more readable. 
-I had to use AI for formatting at one point of time as my code was too messy and searching for references was too difficult.
-I also used AI for commenting which I did not include in the finished code. 
-**There was two cases where I used AI when I got completely stuck.(I only used it as a last resort)**
+- I had to use AI for formatting at one point of time as my code was too messy and searching for references was too difficult.
+- I also used AI for commenting which I did not include in the finished code. 
+
+**There was two cases where I used AI for code when I got completely stuck.(I only used it as a last resort)**
 1. I was stuck when I couldnt update my jokers dynamically and had to ask AI for how to find the positioning of my joker element and match it to the right joker as my jokers are kept in ```const jokersInPlay :{idOne:"",idTwo:""}```.The fix for this was to move the remaining joker to jokeridOne everytime I remove a joker so that the joker is always in the right positioning.
 2. The other case was when I was having issues with my bosses - specifically the braille and No Money for a suit Bosses, not updating my cards properly to hidden. Turns out my issue was I was applying them to the deck itself and not the hands/table.
 Most of the time if i didnt know the code to perform a function I just googled for it and learnt how the function worked - eg. Deep cloning an array with JSON.stringify
+As for the images , the logo and the boss image is drawn by me while the joker images are AI generated. I had drawn 3 cards but could not finish drawing all of them in time so I used them as placeholders.
+
 **Things To Improve**
 1.Better Readability
 2.Organizing code

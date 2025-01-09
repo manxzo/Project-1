@@ -29,7 +29,7 @@
               <h3 class="title-box">Player Points</h3>
               <div class="coin-info-container">
                 <img src="./assets/coin.png" alt="Coin" class="coin" />
-                <h1 id="player-points" class="coin-info-box">0000</h1>
+                <h1 id="player-points" class="coin-info-box">9999</h1>
               </div>
             </div>
           </div>
@@ -48,19 +48,19 @@
             <div class="point-multi-container">
               <div class="title-info-container">
                 <h3 class="title-box calculator">Points</h3>
-                <h1 id="hand-points" class="info-box calculator">0</h1>
+                <h1 id="hand-points" class="info-box calculator">999</h1>
               </div>
               <div class="x-container">
                 <h1 class="x-text">X</h1>
               </div>
               <div class="title-info-container">
                 <h3 class="title-box calculator">Multi</h3>
-                <h1 id="hand-multi" class="info-box calculator">0</h1>
+                <h1 id="hand-multi" class="info-box calculator">999</h1>
               </div>
             </div>
             <div class="total-container title-info-container">
               <h1 class="title-box total">Total</h1>
-              <h1 id="hand-total" class="info-box">0</h1>
+              <h1 id="hand-total" class="info-box">9999</h1>
             </div>
           </div>
         </section>
@@ -73,9 +73,10 @@
             </div>
             <div class="bossinfo-container title-info-container">
               <div class="total-container title-info-container">
-                <h1 class="title-box boss">Boss Name</h1>
+                <h1 id="boss-name" class="title-box boss">Boss Name</h1>
                 <h1 id="boss-info" class="info-box boss">
-                  you cannot play hearts this round(boss details)
+                  Boss Info Here!<br />Tip: You will fight the boss every 3
+                  rounds during Boss Blind!
                 </h1>
               </div>
             </div>
@@ -102,7 +103,7 @@
         <section class="gameplay-section message-box">
           <div class="message-container">
             <h1 id="message" class="info-box message">
-              This space is for displaying messages for the game!
+              Welcome to JokerPoker! 
             </h1>
           </div>
         </section>
@@ -122,18 +123,46 @@
               </h1>
             </div>
             <div class="joker-cards-container">
-              <div class="joker-cards jokers-in-play">
-                <div class="jokerinfo-container"></div>
-                <div class="jokerinfo-container"></div>
-              </div>
-              <div class="joker-cards jokers-available">
-                <div class="jokerinfo-container"></div>
-                <div class="jokerinfo-container"></div>
-                <div class="jokerinfo-container"></div>
-              </div>
-              <div class="joker-cards jokers-details invisible">
-                <div class="jokerinfo-container details"></div>
-                <div class="jokerinfo-container details"></div>
+              <div
+                id="jokers-play-cards"
+                class="joker-cards jokers-in-play"
+              ></div>
+              <div
+                id="jokers-available-cards"
+                class="joker-cards jokers-available"
+              ></div>
+              <div
+                id="gameplay-info"
+                class="joker-cards jokers-details invisible"
+              >
+                <div class="joker-info-box">
+                  <div class="joker-info-container">
+                    <h1 id="joker-1-title" class="title-box joker-info-title">
+                      Joker 1 Name
+                    </h1>
+                    <h1 id="joker-1-info" class="info-box joker-info">
+                      Joker 1 Info Here
+                    </h1>
+                  </div>
+                  <div class="joker-info-container">
+                    <h1 id="joker-2-title" class="title-box joker-info-title">
+                      Joker 2 Name
+                    </h1>
+                    <h1 id="joker-2-info" class="info-box joker-info">
+                      Joker 2 Info Here
+                    </h1>
+                  </div>
+                </div>
+                <div class="hand-discards-box">
+                  <div class="h-info-container">
+                    <h1 class="title-box h-info-title">Hands Left</h1>
+                    <h1 id="hands-left" class="info-box h-info">0</h1>
+                  </div>
+                  <div class="h-info-container">
+                    <h1 class="title-box h-info-title">Discards Left</h1>
+                    <h1 id="discards-left" class="info-box h-info">0</h1>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -144,19 +173,22 @@
           <div class="full-hand-buttons-container">
             <!-- Buttons -->
             <div class="buttons-container">
-              <button id="play-button" href="#" class="in-game-button">PLAY</button>
-              <button id="discard-button" href="#" class="in-game-button">DISCARD</button>
+              <button id="play-button" href="#" class="in-game-button">
+                PLAY
+              </button>
+              <button id="discard-button" href="#" class="in-game-button">
+                DISCARD
+              </button>
             </div>
 
             <!-- Hand Cards -->
-            <div id="hand" class="cards-container hand-container">
-            </div>
+            <div id="hand" class="cards-container hand-container"></div>
 
             <!-- Deck -->
             <div class="deck-container">
               <div class="single-card-container deck">
                 <h1>Cards Left:</h1>
-                <h1 id = "card-count">42</h1>
+                <h1 id="card-count">52</h1>
               </div>
             </div>
           </div>
@@ -164,16 +196,16 @@
 
         <!-- Table Cards -->
         <section class="gameplay-section">
-          <div id="table" class="cards-container table-container">
-          </div>
+          <div id="table" class="cards-container table-container"></div>
         </section>
       </div>
 
       <div class="menu">
-        <button id="new-game-btn" class="menu-button">New Game</button>
-        <button id="reset-btn" class="menu-button">Reset Game</button>
-        <button id="arrange-btn" class="menu-button">Arrange Cards</button>
-        <button id="shuffle-btn" class="menu-button">Shuffle Cards</button>
+        <button id="menuBtn-1" class="menu-button">Start Game</button>
+        <button id="menuBtn-2" class="menu-button">-</button>
+        <button id="menuBtn-3" class="menu-button">-</button>
+        <button id="menuBtn-4" class="menu-button">-</button>
+        <button id="menuBtn-5" class="menu-button">How to Play</button>
       </div>
     </div>
     <script src="./js/script.js"></script>

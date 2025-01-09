@@ -37,21 +37,24 @@ body {
 
 /* .gameinfo => 20%, .gameplay => 70%, .menu => 10% */
 .gameinfo {
-  width: 20%;
+  max-width: 20%;
+  flex: 2 auto;
   display: flex;
   flex-direction: column;
   /* 6 child sections => ratio 1:2:1:2:2:1 via nth-child below */
   min-width: 240px; /* so it doesn’t shrink too much */
 }
 .gameplay {
-  width: 70%;
+  max-width: 70%;
+  flex: 7 auto;
   display: flex;
   flex-direction: column;
   /* 4 child sections => ratio 1:2:2:2 via nth-child below */
   min-width: 480px;
 }
 .menu {
-  width: 10%;
+  max-width: 10%;
+  flex: 1 auto;
   display: flex;
   align-self: center;
   flex-direction: column;
@@ -317,7 +320,9 @@ body {
   flex: 1 1 auto;
   padding: 5px;
 }
-
+#message {
+  white-space: pre;
+}
 /***************************************************
   12) Jokers => row => ratio 2:3
 ****************************************************/
@@ -338,6 +343,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .joker-cards-container {
   display: flex;
   flex-direction: row;
@@ -365,22 +371,78 @@ body {
   flex: 3;
 }
 /* Joker cards => same size as playing cards if you want. */
-.jokerinfo-container {
-  min-width: 6em;
-  min-height: 10em;
+
+.single-joker-container {
+  width: 6em;
+  height: 10em;
   background: #fff;
   border: 2px solid #000;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0.3em;
+  overflow: hidden;
+  padding: 0;
+  color: #000;
 }
-.jokerinfo-container.details {
-  background-color: gainsboro;
-  align-self: stretch;
+.jokerimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hiddentext {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.joker-info-box {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #000;
+  flex: 3;
+  min-height: 100%;
+}
+.hand-discards-box {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #000;
+  flex: 2;
+  min-height: 100%;
+}
+.joker-info-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 5px;
+}
+.h-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 5px;
+}
+.joker-info-title {
+  font-size: 1.2em;
+}
+.joker-info {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 2px;
+}
+.h-info-title {
+  font-size: 1.1em;
+}
+.h-info {
+  font-size: 6em;
+  margin-top: 2px;
 }
 /***************************************************
   13) Hand => 20% for buttons, 80% for 5 cards + deck
@@ -436,6 +498,9 @@ body {
   padding: 0.3em;
   overflow: hidden;
 }
+.card-facedown {
+  background: red;
+}
 .card-value-top {
   align-self: flex-start;
   font-size: 2em;
@@ -454,7 +519,7 @@ body {
   margin: 0;
 }
 
-.red-card{
+.red-card {
   color: red;
 }
 .deck {
@@ -466,7 +531,7 @@ body {
   align-content: center;
   justify-content: space-evenly;
 }
-#card-count{
+#card-count {
   font-size: 4em;
   margin: 0;
 }

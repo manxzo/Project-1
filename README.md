@@ -138,6 +138,9 @@ A few things I would like to improve on is organising my code better and making 
 Most of the time if i didnt know the code to perform a function I just googled for it and learnt how the function worked - eg. Deep cloning an array with JSON.stringify
 As for the images , the logo and the boss image is drawn by me while the joker images are AI generated. I had drawn 3 cards but could not finish drawing all of them in time so I used them as placeholders.
 
+**For css, I used AI to convert my font sizes from px to em for scalability and I was unsure of how much to use for each case**
+Apart from that , I used AI to learn styling for css by providing it with prompts for what I needed and asking how I can style it. -eg.using nth child to enforce flexbox styling or white-space to allow me to use `\n` in JS.
+
 **Things To Improve**
 1. Better Readability
 2. Organizing code

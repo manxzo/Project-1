@@ -1,5 +1,5 @@
 /***************************************************
-  0) GLOBAL RESET / BASE
+GLOBAL 
 ****************************************************/
 *,
 *::before,
@@ -10,7 +10,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* Let the user scroll if the design is bigger than screen. */
   overflow: auto;
   width: 100%;
   height: 100%;
@@ -41,15 +40,14 @@ body {
   flex: 2 auto;
   display: flex;
   flex-direction: column;
-  /* 6 child sections => ratio 1:2:1:2:2:1 via nth-child below */
-  min-width: 240px; /* so it doesn’t shrink too much */
+ 
+  min-width: 240px; 
 }
 .gameplay {
   max-width: 70%;
   flex: 7 auto;
   display: flex;
   flex-direction: column;
-  /* 4 child sections => ratio 1:2:2:2 via nth-child below */
   min-width: 480px;
 }
 .menu {
@@ -84,7 +82,6 @@ body {
 .gameinfo-section > * {
   min-height: 100%;
 }
-/* Nth-child approach: 1:2:1:2:2:1 => total 9 "units" */
 .gameinfo-section:nth-child(1) {
   flex: 1 1 0;
 }
@@ -370,7 +367,6 @@ body {
 .jokers-details {
   flex: 3;
 }
-/* Joker cards => same size as playing cards if you want. */
 
 .single-joker-container {
   width: 6em;
@@ -484,7 +480,6 @@ body {
 /***************************************************
   14) Playing Cards
 ****************************************************/
-/* Use em-based or fixed. Let’s do em-based for scaling. */
 .single-card-container {
   min-width: 6em;
   min-height: 10em;

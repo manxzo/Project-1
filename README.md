@@ -139,9 +139,9 @@ Most of the time if i didnt know the code to perform a function I just googled f
 As for the images , the logo and the boss image is drawn by me while the joker images are AI generated. I had drawn 3 cards but could not finish drawing all of them in time so I used them as placeholders.
 
 **Things To Improve**
-1.Better Readability
-2.Organizing code
-3.Proper commenting
+1. Better Readability
+2. Organizing code
+3. Proper commenting
 
 
 

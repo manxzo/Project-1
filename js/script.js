@@ -970,7 +970,8 @@ function moveJokerstoPlay(jokerID) {
 function moveJokerstoAvail(jokerSlotIndex) {
   if (jokerSlotIndex === 0 && jokersPlay.idOne) {
     jokersAvailable.push(jokersPlay.idOne);
-    jokersPlay.idOne = "";
+    jokersPlay.idOne = jokersPlay.idTwo;
+    jokersPlay.idTwo = "";
   } else if (jokerSlotIndex === 1 && jokersPlay.idTwo) {
     jokersAvailable.push(jokersPlay.idTwo);
     jokersPlay.idTwo = "";
@@ -978,6 +979,7 @@ function moveJokerstoAvail(jokerSlotIndex) {
   updateJokersDisplay();
   updateJokerInfoDisplay();
 }
+
 function moveJokerstoGameList() {
   for (let i = 0; i < jokersAvailable.length; i++) {
     jokersGameList.push(jokersAvailable[i]);

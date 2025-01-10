@@ -126,6 +126,7 @@ enter Bonus Round
 Retry Button + Leaderboard Name
 ```
 ---------------------------------------------------------------------------------------------------
+[GAME LINK](https://manxzo.github.io/Project-1/)
 ## Comments and references
 So for my code , I got the logic working for the most part, except some parts where I misplaces the code positioning an usually fixed it with the console.
 A few things I would like to improve on is organising my code better and making my code more readable. 
